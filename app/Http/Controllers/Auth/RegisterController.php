@@ -43,21 +43,22 @@ class RegisterController extends Controller
 
     /**
      * @param Request $request
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @return bool
      */
     public function register(Request $request)
     {
         try {
             $this->validator($request->all())->validate();
-        }catch (\Exception $e){
-           dd($e);
+        }
+        catch (\Exception $e){
+            return back()->with('error', $e->getMessage());
     }
 
         $email=$request->input('email');
         $password=$request->input('password');
         $Objuser = $this->create(['email'=>$email, 'password'=>$password]);
         if (!($Objuser instanceof User)){
-            return back()->width('error', "Can't create object");
+            return back()->with('error', "Can't create object");
         }
         $this->guard()->login($Objuser);
 
