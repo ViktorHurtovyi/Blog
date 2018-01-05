@@ -32,7 +32,9 @@
         <input type="password" id="password-confirmation" name="password_confirmation" class="form-control" placeholder="Confirm Password" required>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Регистрация</button>
     </form>
+    <script src="https://cdn.rawgit.com/alertifyjs/alertify.js/v1.0.10/dist/js/alertify.js"></script>
 
+    @include('inc.Messages')
 </div>
 </body>
 </html>

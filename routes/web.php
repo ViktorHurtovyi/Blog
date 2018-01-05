@@ -30,14 +30,18 @@ Route::get('/', function () {
         Route::get('/my/account/', 'AccountController@index')->name('account');
 
         //Admin
-        Route::group(['middleware' => 'admin'], function (){
-            Route::get('/admin', 'Admin\AccountController@index')->name('admin');
+        Route::group(['middleware' => 'admin', 'prefix' => 'admin'], function (){
+            Route::get('/', 'Admin\AccountController@index')->name('admin');
 
             Route::get('/categories', 'Admin\CategoriesController@index')->name('categories');
             Route::get('/categories/add', 'Admin\CategoriesController@addCategory')->name('categories.add');
-            Route::get('/categories/edit/[id]', 'Admin\CategoriesController@editCategory ')
+            Route::post('/categories/add', 'Admin\CategoriesController@requestCategory');
+            Route::get('/categories/edit/{id}', 'Admin\CategoriesController@editCategory')
                ->where('id', '\d+')
                 ->name('categories.edit');
-            Route::get('/categories/delete', 'Admin\CategoriesController@deleteCategory')->name('categories');
+            Route::post('/categories/edit/{id}', 'Admin\CategoriesController@editRequestCategory')
+                ->where('id', '\d+');
+            Route::delete('/categories/delete', 'Admin\CategoriesController@deleteCategory')
+                ->name('categories.delete');
         });
     });

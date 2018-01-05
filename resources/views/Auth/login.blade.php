@@ -37,5 +37,7 @@
 
 </div>
 <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+<script src="https://cdn.rawgit.com/alertifyjs/alertify.js/v1.0.10/dist/js/alertify.js"></script>
+@include('inc.Messages')
 </body>
 </html>
