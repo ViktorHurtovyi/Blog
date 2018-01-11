@@ -67,7 +67,7 @@
             </ul>
         </nav>
 
-        @yield('content')
+        @yield('contentik')
     </div>
 </div>
 
