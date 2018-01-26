@@ -14,13 +14,13 @@
     <link href="https://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="https://getbootstrap.com/docs/4.0/examples/dashboard/dashboard.css" rel="stylesheet">
+       <link href="https://v4-alpha.getbootstrap.com/examples/dashboard/dashboard.css" rel="stylesheet">
 </head>
 
 <body>
 <header>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="/blog/public/admin">Панель управления</a>
+        <a class="navbar-brand" href="/blog/public/my/account">Панель управления</a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -28,7 +28,7 @@
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/blog/public/admin">Гланая <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="">Гланая <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Settings</a>
@@ -53,21 +53,32 @@
         <nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
             <ul class="nav nav-pills flex-column">
                 <li class="nav-item">
-                    <a class="nav-link" href="{!! route('categories') !!}">Категории <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{!! route('accCategories') !!}">Категории <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{!! route('articles') !!}">Статьи</a>
+                    <a class="nav-link" href="">Статьи</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{!! route('users') !!}">Пользователи</a>
+                    <a class="nav-link" href="">Пользователи</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Комментарии</a>
+               
+                 <li class="nav-item">
+                    <a class="nav-link" href="">Комментарии</a>
+                 </li>
+                     <li class="nav-item">
+                         <a class="nav-link" href="{{ route('logout') }}">Выйти</a>
                 </li>
+                @if(\Auth::user()->isAdmin ==1)
+                 <li class="nav-item">
+                    <a class="nav-link" href="{{ route('admin') }}">Войти как администратор</a>
+                </li>
+                 @endif
+         
             </ul>
         </nav>
 
         @yield('contentik')
+        
     </div>
 </div>
 

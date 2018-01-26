@@ -14,7 +14,7 @@
     <link href="https://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="https://getbootstrap.com/docs/4.0/examples/dashboard/dashboard.css" rel="stylesheet">
+       <link href="https://v4-alpha.getbootstrap.com/examples/dashboard/dashboard.css" rel="stylesheet">
 </head>
 
 <body>
@@ -63,6 +63,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Комментарии</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/blog/public/my/account">Войти как пользователь</a>
                 </li>
             </ul>
         </nav>

@@ -16,6 +16,7 @@ class ArticlesController extends Controller
         $articles = $objArticle->get();
         return view('admin.articles.index', ['articles'=> $articles]);
     }
+   
     public function addArticle(){
         $objcategory = new Category();
         $categories = $objcategory->get();

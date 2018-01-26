@@ -28,6 +28,7 @@ Route::get('/', function () {
         return redirect(route('login'));
 })->name('logout');
         Route::get('/my/account/', 'AccountController@index')->name('account');
+        Route::get('/my/account/categories', 'Users\CategoriesController@index')->name('accCategories');
 
         //Admin
         Route::group(['middleware' => 'admin', 'prefix' => 'admin'], function (){
