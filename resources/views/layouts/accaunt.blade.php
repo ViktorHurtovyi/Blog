@@ -31,13 +31,7 @@
                     <a class="nav-link" href="">Гланая <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Settings</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="#">Profile</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Help</a>
                 </li>
             </ul>
             <form class="form-inline mt-2 mt-md-0">
@@ -56,15 +50,6 @@
                     <a class="nav-link" href="{!! route('accCategories') !!}">Категории <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Статьи</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="">Пользователи</a>
-                </li>
-               
-                 <li class="nav-item">
-                    <a class="nav-link" href="">Комментарии</a>
-                 </li>
                      <li class="nav-item">
                          <a class="nav-link" href="{{ route('logout') }}">Выйти</a>
                 </li>
