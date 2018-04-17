@@ -24,7 +24,7 @@ Route::get('/', function () {
 //acount
     Route::group(['middleware' => 'auth'], function (){
         Route::get('/account/full/{id}', 'AccountController@full')->where('id', '\d+')->name('article.full');
-        Route::post('/account/full{id}', 'AccountController@commentator')->where('id', '\d+');
+        Route::post('/account/full/{id}', 'AccountController@comment')->where('id', '\d+');
         Route::get('/account/author/{author}', 'AccountController@author')->where('id', '\d+')->name('article.author');
         Route::get('/account/categories/{name}', 'AccountController@category')->where('id', '\d+')->name('category.search');
         Route::get('/logout', function(){

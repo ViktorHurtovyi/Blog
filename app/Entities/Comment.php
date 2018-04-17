@@ -10,6 +10,7 @@ class Comment extends Model
     protected  $primaryKey = "id";
 
     protected $fillable = [
+        'articleId',
         'name',
         'text'
     ];

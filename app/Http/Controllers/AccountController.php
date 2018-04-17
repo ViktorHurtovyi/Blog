@@ -19,13 +19,16 @@ public function index(){
         $articles = $objArticle->where('id', $id)->get();
         return view('account.full', ['articles'=> $articles]);
     }
-    public function commentator(CommentsRequest $request, $id){
+    public function comment(CommentsRequest $request, $id){
         $ObjComment = new Comment();
         $ObjComment = $ObjComment->create([
             'articleId' => $id,
             'name' => $request->input('name'),
-            'text' => $request->input('text')
+            'text' => $request->input('comment')
         ]);
+        if ($ObjComment){
+            return back();
+        }
     }
     public function author($author){
         $objArticle = new Article();

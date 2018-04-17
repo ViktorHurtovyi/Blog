@@ -26,7 +26,7 @@ class ArticlesController extends Controller
     public function addRequestArticle(ArticleRequest $request){
         $objArticle = new Article();
         $objCategoryArticle = new CategoryArticle();
-        $fullText=$request->input('full-text') ?? null;
+        $fullText=$request->input('full-text');
         $objArticle = $objArticle->create([
             'title' => $request->input('title'),
             'short_text' => $request->input('short-text'),
