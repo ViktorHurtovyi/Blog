@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
     {
         public function index(){
             $objUsers = new Users();
-            $users = $objUsers->get();
+            $users = $objUsers->paginate(10);
             return view('admin.users.index', ['users'=> $users]);
         }
         public function deleteUser(Request $request){

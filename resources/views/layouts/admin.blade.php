@@ -31,13 +31,7 @@
                     <a class="nav-link" href="/blog/public/admin">Гланая <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Settings</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Profile</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Help</a>
+                    <a class="nav-link" href="#">Профиль</a>
                 </li>
             </ul>
             <form class="form-inline mt-2 mt-md-0">
@@ -62,7 +56,7 @@
                     <a class="nav-link" href="{!! route('users') !!}">Пользователи</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Комментарии</a>
+                    <a class="nav-link" href="{!! route('comments') !!}">Комментарии</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/blog/public/my/account">Войти как пользователь</a>

@@ -15,9 +15,11 @@ public function index(){
         return view('account.index', ['articles'=> $articles]);
 }
     public function full($id){
+        $objComment = new Comment();
+        $comments = $objComment->where('articleId', $id)->paginate(10);
         $objArticle = new Article();
         $articles = $objArticle->where('id', $id)->get();
-        return view('account.full', ['articles'=> $articles]);
+        return view('account.full', ['articles'=> $articles, 'comments'=> $comments]);
     }
     public function comment(CommentsRequest $request, $id){
         $ObjComment = new Comment();

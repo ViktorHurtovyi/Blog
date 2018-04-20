@@ -18,4 +18,12 @@
         <input type="text" name="name" value={{\Auth::user()->email}}></br></br>
         <button type="submit" class="btn-success" style="cursor: pointer">Добавить</button>
     </form>
+    @foreach($comments as $comment)
+        <table class="table table-bordered">
+            <tr>
+                {{$comment->name}}
+                <td>{{$comment->text}}</td>
+                </tr>
+        </table>
+    @endforeach
 </main>

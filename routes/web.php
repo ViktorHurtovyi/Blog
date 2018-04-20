@@ -59,6 +59,9 @@ Route::get('/', function () {
             //Users
             Route::get('/users', 'Admin\UsersController@index')->name('users');
             Route::delete('/users/delete', 'Admin\UsersController@deleteUser')->name('users.delete');
+            //Comments
+            Route::get('/comments', 'Admin\CommentsController@index')->name('comments');
+            Route::delete('/comments/delete', 'Admin\CommentsController@deleteComments')->name('comments.delete');
         });
 
     });
